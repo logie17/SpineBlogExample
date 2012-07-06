@@ -17,6 +17,10 @@ class Blog extends Spine.Controller
         @posts.edit.active(params)
       '/posts/:id': (params) ->
         @posts.show.active(params)
+      '/posts/:id': (params) ->
+        @posts.show.active(params)
+      '/' : () ->
+        @posts.add_new.active()
 
     @append @posts
 

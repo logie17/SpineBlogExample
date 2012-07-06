@@ -1,0 +1,17 @@
+<header>
+</header>
+
+<h1>Add a Post</h1>
+<div class="content">
+  <form>
+    <label>
+      <span>Name</span>
+      <input type="text" name="author_last_name" value="">
+    </label>
+
+    <label>
+      <span>Content</span>
+      <input type="text" name="content" value="">
+    </label>
+
+</div>

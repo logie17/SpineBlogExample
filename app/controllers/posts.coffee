@@ -2,6 +2,15 @@ Spine = require('spine')
 Post  = require('models/post')
 $     = Spine.$
 
+class AddNew extends Spine.Controller
+  className: 'add_new'
+
+  constructor: ->
+    super
+    @render()
+ 
+  render: ->
+    @html require('views/add_post')
 
 class Show extends Spine.Controller
   className: 'show'
@@ -17,9 +26,7 @@ class Show extends Spine.Controller
     @html require('views/show_post')(@item)
 
   change: (params) =>
-    console.log("FUKC!!!")
-    @item = Contact.find(params.id)
-    console.log("FUKC!!!")
+    @item = Post.find(params.id)
     @render()
  
   edit: ->
@@ -44,9 +51,7 @@ class Edit extends Spine.Controller
     @html require('views/form_post')(@item)
 
   change: (params) =>
-    console.log("FUKC!!!")
     @item = Post.find(params.id)
-    console.log("FUKC!!!")
     @render()
 
   submit: (e) ->
@@ -61,5 +66,6 @@ class Posts extends Spine.Stack
   controllers:
     show: Show
     edit: Edit
+    add_new: AddNew
     
 module.exports = Posts
